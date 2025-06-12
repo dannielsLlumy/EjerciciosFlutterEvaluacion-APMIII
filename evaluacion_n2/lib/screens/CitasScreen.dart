@@ -1,4 +1,3 @@
-
 import 'package:evaluacion_n2/screens/DrawerWigdet.dart';
 import 'package:flutter/material.dart';
 
@@ -14,23 +13,48 @@ class _CitasScreenState extends State<CitasScreen> {
   final _especialidadController = TextEditingController();
   DateTime? _fechaSeleccionada;
 
+  final List<Map<String, dynamic>> _citasGuardadas = [];
+
   void _guardarCita() {
     final id = _idController.text.trim();
     final especialidad = _especialidadController.text.trim();
     final fecha = _fechaSeleccionada;
 
     if (id.isEmpty || especialidad.isEmpty || fecha == null) {
-      _mostrarAlerta('Completa todos los campos');
+      _mostrarAlerta("Completa todos los campos");
       return;
     }
 
-    _mostrarAlerta('Cita guardada:\nID: $id\nEspecialidad: $especialidad\nDía: ${fecha.toLocal().toString().split(' ')[0]}');
+    setState(() {
+      _citasGuardadas.add({
+        "id": id,
+        "especialidad": especialidad,
+        "fecha": fecha,
+      });
+    });
+
+    _mostrarAlerta(
+      "Cita guardada: ${id} ${especialidad} ${fecha.toLocal().toString().split(" ")[0]}",
+    );
 
     _idController.clear();
     _especialidadController.clear();
     setState(() {
       _fechaSeleccionada = null;
     });
+  }
+
+  void _verCitasGuardadas() {
+    if (_citasGuardadas.isEmpty) {
+      _mostrarAlerta("No hay citas registradas.");
+      return;
+    }
+
+    final mensaje = _citasGuardadas.map((cita) {
+      return "ID: ${cita["id"]}, Especialidad: ${cita["especialidad"]}, Fecha: ${cita["fecha"].toLocal().toString().split(" ")[0]}";
+    }).join('\n');
+
+    _mostrarAlerta(mensaje);
   }
 
   void _seleccionarFecha() async {
@@ -56,7 +80,7 @@ class _CitasScreenState extends State<CitasScreen> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('OK'),
+            child: const Text("OK"),
           )
         ],
       ),
@@ -73,18 +97,27 @@ class _CitasScreenState extends State<CitasScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Citas')),
+      appBar: AppBar(
+        title: const Text("Citas"),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.list),
+            onPressed: _verCitasGuardadas,
+          ),
+        ],
+      ),
+      drawer: const AppDrawner(),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
             TextField(
               controller: _idController,
-              decoration: const InputDecoration(labelText: 'ID de la cita'),
+              decoration: const InputDecoration(labelText: "ID de la cita"),
             ),
             TextField(
               controller: _especialidadController,
-              decoration: const InputDecoration(labelText: 'Especialidad'),
+              decoration: const InputDecoration(labelText: "Especialidad"),
             ),
             const SizedBox(height: 8),
             Row(
@@ -92,20 +125,20 @@ class _CitasScreenState extends State<CitasScreen> {
                 Expanded(
                   child: Text(
                     _fechaSeleccionada == null
-                        ? 'Selecciona una fecha'
-                        : _fechaSeleccionada!.toLocal().toString().split(' ')[0],
+                        ? "Selecciona una fecha"
+                        : _fechaSeleccionada!.toLocal().toString().split(" ")[0],
                   ),
                 ),
                 TextButton(
                   onPressed: _seleccionarFecha,
-                  child: const Text('Elegir fecha'),
+                  child: const Text("Elegir fecha"),
                 ),
               ],
             ),
             const SizedBox(height: 12),
             ElevatedButton(
               onPressed: _guardarCita,
-              child: const Text('Guardar'),
+              child: const Text("Guardar"),
             ),
           ],
         ),
