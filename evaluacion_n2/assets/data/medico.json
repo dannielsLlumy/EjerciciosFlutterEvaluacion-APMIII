@@ -1,0 +1,257 @@
+{
+    "servicio_medico": [
+        {
+            "id": "servicio1",
+            "nombre": "Consulta Médica General",
+            "proveedor": {
+                "nombre": "Clínica Salud Total",
+                "ubicacion": {
+                    "ciudad": "Ciudad de México",
+                    "pais": "México",
+                    "direccion": "Av. Reforma, 123"
+                }
+            },
+            "descripcion": "Consulta médica general para diagnosticar y tratar problemas de salud comunes.",
+            "horario": "Lunes a Viernes, 8:00 AM - 5:00 PM",
+            "contacto": {
+                "telefono": "+52 55 1234 5678",
+                "email": "contacto@clinicasaludtotal.mx"
+            },
+            "info": {
+                "imagen": "https://raw.githubusercontent.com/jritsqmet/web-api/main/assets/images/api-medicos/medicina-general.webp",
+                "precio": "30 USD",
+                "duracion": "30 minutos"
+            }
+        },
+        {
+            "id": "servicio2",
+            "nombre": "Examen de Sangre",
+            "proveedor": {
+                "nombre": "Laboratorio Central",
+                "ubicacion": {
+                    "ciudad": "Guadalajara",
+                    "pais": "México",
+                    "direccion": "Calle de la Salud, 45"
+                }
+            },
+            "descripcion": "Exámenes de sangre completos para detectar diversas condiciones y enfermedades.",
+            "horario": "Lunes a Sábado, 7:00 AM - 2:00 PM",
+            "contacto": {
+                "telefono": "+52 33 9876 5432",
+                "email": "info@laboratoriocentral.mx"
+            },
+            "info": {
+                "imagen": "https://raw.githubusercontent.com/jritsqmet/web-api/main/assets/images/api-medicos/analisis-sangre-analitica.jpg",
+                "precio": "15 USD",
+                "duracion": "15 minutos"
+            }
+        },
+        {
+            "id": "servicio3",
+            "nombre": "Terapia Física",
+            "proveedor": {
+                "nombre": "Centro de Rehabilitación Física",
+                "ubicacion": {
+                    "ciudad": "Monterrey",
+                    "pais": "México",
+                    "direccion": "Av. de los Doctores, 789"
+                }
+            },
+            "descripcion": "Sesiones de terapia física para recuperación de lesiones y mejora de la movilidad.",
+            "horario": "Lunes a Viernes, 9:00 AM - 6:00 PM",
+            "contacto": {
+                "telefono": "+52 81 1122 3344",
+                "email": "terapia@rehabilitacionfisica.mx"
+            },
+            "info": {
+                "imagen": "https://raw.githubusercontent.com/jritsqmet/web-api/main/assets/images/api-medicos/fisioterapia-rehabilitacion.jpg",
+                "precio": "35 USD por sesión",
+                "duracion": "1 hora"
+            }
+        },
+        {
+            "id": "servicio4",
+            "nombre": "Consulta Odontológica",
+            "proveedor": {
+                "nombre": "Clínica Dental Sonrisa",
+                "ubicacion": {
+                    "ciudad": "Lima",
+                    "pais": "Perú",
+                    "direccion": "Blvd. de los Dientes, 321"
+                }
+            },
+            "descripcion": "Consulta dental para revisión, limpieza y tratamiento de caries.",
+            "horario": "Lunes a Sábado, 9:00 AM - 5:00 PM",
+            "contacto": {
+                "telefono": "+51 1 2345 6789",
+                "email": "info@clinicadentalsonrisa.pe"
+            },
+            "info": {
+                "imagen": "https://raw.githubusercontent.com/jritsqmet/web-api/main/assets/images/api-medicos/dental.jpg",
+                "precio": "30 USD",
+                "duracion": "45 minutos"
+            }
+        },
+        {
+            "id": "servicio5",
+            "nombre": "Consulta Pediátrica",
+            "proveedor": {
+                "nombre": "Hospital Infantil de Bogotá",
+                "ubicacion": {
+                    "ciudad": "Bogotá",
+                    "pais": "Colombia",
+                    "direccion": "Av. de los Niños, 456"
+                }
+            },
+            "descripcion": "Consulta médica especializada para niños y adolescentes.",
+            "horario": "Lunes a Viernes, 8:00 AM - 4:00 PM",
+            "contacto": {
+                "telefono": "+57 1 234 5678",
+                "email": "contacto@hospitalinfantil.co"
+            },
+            "info": {
+                "imagen": "https://raw.githubusercontent.com/jritsqmet/web-api/main/assets/images/api-medicos/pediatra.jpeg",
+                "precio": "28 USD",
+                "duracion": "30 minutos"
+            }
+        },
+        {
+            "id": "servicio6",
+            "nombre": "Consulta Nutricional",
+            "proveedor": {
+                "nombre": "Centro Nutricional Vida Sana",
+                "ubicacion": {
+                    "ciudad": "Buenos Aires",
+                    "pais": "Argentina",
+                    "direccion": "Av. de la Salud, 789"
+                }
+            },
+            "descripcion": "Consulta con un nutricionista para desarrollar un plan de alimentación saludable.",
+            "horario": "Lunes a Viernes, 10:00 AM - 6:00 PM",
+            "contacto": {
+                "telefono": "+54 11 3456 7890",
+                "email": "contacto@centrovidasana.com.ar"
+            },
+            "info": {
+                "imagen": "https://raw.githubusercontent.com/jritsqmet/web-api/main/assets/images/api-medicos/nutricional.jpg",
+                "precio": "25 USD",
+                "duracion": "45 minutos"
+            }
+        },
+        {
+            "id": "servicio7",
+            "nombre": "Consulta Psicológica",
+            "proveedor": {
+                "nombre": "Centro Psicológico Bienestar",
+                "ubicacion": {
+                    "ciudad": "Santiago",
+                    "pais": "Chile",
+                    "direccion": "Av. de la Paz, 123"
+                }
+            },
+            "descripcion": "Sesión con un psicólogo para tratar problemas emocionales y mentales.",
+            "horario": "Lunes a Viernes, 9:00 AM - 5:00 PM",
+            "contacto": {
+                "telefono": "+56 2 1234 5678",
+                "email": "contacto@psicologicobienestar.cl"
+            },
+            "info": {
+                "imagen": "https://raw.githubusercontent.com/jritsqmet/web-api/main/assets/images/api-medicos/psicologia.webp",
+                "precio": "40 USD",
+                "duracion": "1 hora"
+            }
+        },
+        {
+            "id": "servicio8",
+            "nombre": "Examen de Vista",
+            "proveedor": {
+                "nombre": "Óptica Visual",
+                "ubicacion": {
+                    "ciudad": "Quito",
+                    "pais": "Ecuador",
+                    "direccion": "Av. de la Visión, 456"
+                }
+            },
+            "descripcion": "Examen completo de la vista para detectar problemas oculares.",
+            "horario": "Lunes a Sábado, 9:00 AM - 6:00 PM",
+            "contacto": {
+                "telefono": "+593 2 234 5678",
+                "email": "info@opticavisual.ec"
+            },
+            "info": {
+                "imagen": "https://raw.githubusercontent.com/jritsqmet/web-api/main/assets/images/api-medicos/vista.jpg",
+                "precio": "20 USD",
+                "duracion": "30 minutos"
+            }
+        },
+        {
+            "id": "servicio9",
+            "nombre": "Consulta de Dermatología",
+            "proveedor": {
+                "nombre": "Dermatología Avanzada",
+                "ubicacion": {
+                    "ciudad": "Guayaquil",
+                    "pais": "Ecuador",
+                    "direccion": "Av. Francisco de Orellana, 789"
+                }
+            },
+            "descripcion": "Consulta especializada en el diagnóstico y tratamiento de enfermedades de la piel.",
+            "horario": "Lunes a Viernes, 8:00 AM - 4:00 PM",
+            "contacto": {
+                "telefono": "+593 4 234 5678",
+                "email": "contacto@dermatologiaavanzada.ec"
+            },
+            "info": {
+                "imagen": "https://raw.githubusercontent.com/jritsqmet/web-api/main/assets/images/api-medicos/dermatologia.jpg",
+                "precio": "35 USD",
+                "duracion": "30 minutos"
+            }
+        },
+        {
+            "id": "servicio10",
+            "nombre": "Consulta Cardiológica",
+            "proveedor": {
+                "nombre": "Centro Cardiológico Quito",
+                "ubicacion": {
+                    "ciudad": "Quito",
+                    "pais": "Ecuador",
+                    "direccion": "Calle Amazonas, 456"
+                }
+            },
+            "descripcion": "Evaluación y tratamiento de enfermedades cardiovasculares.",
+            "horario": "Lunes a Viernes, 8:00 AM - 5:00 PM",
+            "contacto": {
+                "telefono": "+593 2 345 6789",
+                "email": "info@centrocardiologico.ec"
+            },
+            "info": {
+                "imagen": "https://raw.githubusercontent.com/jritsqmet/web-api/main/assets/images/api-medicos/Cardiologo.webp",
+                "precio": "50 USD",
+                "duracion": "1 hora"
+            }
+        },
+        {
+            "id": "servicio11",
+            "nombre": "Fisioterapia Deportiva",
+            "proveedor": {
+                "nombre": "Centro de Rehabilitación Deportiva",
+                "ubicacion": {
+                    "ciudad": "Cuenca",
+                    "pais": "Ecuador",
+                    "direccion": "Av. de los Andes, 123"
+                }
+            },
+            "descripcion": "Sesiones de fisioterapia para atletas y personas activas que buscan recuperarse de lesiones deportivas.",
+            "horario": "Lunes a Viernes, 9:00 AM - 6:00 PM",
+            "contacto": {
+                "telefono": "+593 7 234 5678",
+                "email": "contacto@rehabilitaciondeportiva.ec"
+            },
+            "info": {
+                "imagen": "https://raw.githubusercontent.com/jritsqmet/web-api/main/assets/images/api-medicos/deport.jpg",
+                "precio": "40 USD por sesión",
+                "duracion": "1 hora"
+            }
+        }
+    ]
+}
