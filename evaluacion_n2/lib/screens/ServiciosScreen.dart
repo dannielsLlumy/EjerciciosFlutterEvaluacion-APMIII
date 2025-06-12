@@ -25,16 +25,19 @@ class _ServiciosScreenState extends State<Serviciosscreen> {
   Future<void> _cargarServicios() async {
     try {
       final data = await rootBundle.loadString("assets/data/medico.json");
-      final jsonList = json.decode(data);
+      final decodedJson = json.decode(data);
 
-      if (jsonList is List) {
+      if (decodedJson is Map && decodedJson['servicio_medico'] is List) {
+        final serviciosList = decodedJson['servicio_medico'];
         setState(() {
-          _servicios = jsonList.map((json) => Servicio.fromJson(json)).toList();
+          _servicios = serviciosList
+              .map<Servicio>((json) => Servicio.fromJson(json))
+              .toList();
           _isLoading = false;
         });
       } else {
         setState(() {
-          _error = "El JSON no es una lista de servicios.";
+          _error = "El JSON no contiene la lista de servicios esperada.";
           _isLoading = false;
         });
       }
@@ -66,30 +69,30 @@ class _ServiciosScreenState extends State<Serviciosscreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Servicios")),
-      drawer: const AppDrawner(), // si usas Drawer
+      drawer: const AppDrawner(),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : _error != null
-          ? Center(child: Text(_error!))
-          : ListView.builder(
-              itemCount: _servicios.length,
-              itemBuilder: (context, index) {
-                final servicio = _servicios[index];
-                return ListTile(
-                  leading: Image.network(
-                    servicio.imagen,
-                    width: 50,
-                    height: 50,
-                    errorBuilder: (context, error, stackTrace) {
-                      return const Icon(Icons.image_not_supported);
-                    },
-                  ),
-                  title: Text(servicio.nombre),
-                  subtitle: Text(servicio.horario),
-                  onTap: () => _mostrarInfo(servicio),
-                );
-              },
-            ),
+              ? Center(child: Text(_error!))
+              : ListView.builder(
+                  itemCount: _servicios.length,
+                  itemBuilder: (context, index) {
+                    final servicio = _servicios[index];
+                    return ListTile(
+                      leading: Image.network(
+                        servicio.imagen,
+                        width: 50,
+                        height: 50,
+                        errorBuilder: (context, error, stackTrace) {
+                          return const Icon(Icons.image_not_supported);
+                        },
+                      ),
+                      title: Text(servicio.nombre),
+                      subtitle: Text(servicio.horario),
+                      onTap: () => _mostrarInfo(servicio),
+                    );
+                  },
+                ),
     );
   }
 }

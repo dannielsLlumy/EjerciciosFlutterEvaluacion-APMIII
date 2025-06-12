@@ -13,10 +13,10 @@ class Servicio {
 
   factory Servicio.fromJson(Map<String, dynamic> json) {
     return Servicio(
-      nombre: json['nombre'],
-      horario: json['horario'],
-      descripcion: json['descripcion'],
-      imagen: json['imagen'],
+      nombre: json['nombre'] ?? 'Sin nombre',
+      horario: json['horario'] ?? 'Horario no disponible',
+      descripcion: json['descripcion'] ?? 'Sin descripción',
+      imagen: json['info']?['imagen'] ?? '',
     );
   }
 }

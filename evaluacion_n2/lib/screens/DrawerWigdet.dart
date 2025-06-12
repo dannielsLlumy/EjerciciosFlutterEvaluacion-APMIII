@@ -19,7 +19,7 @@ class AppDrawner extends StatelessWidget{
             ListTile(
               title: const Text("Citas Médicas"),
               onTap: (){
-                Navigator.pushReplacement(
+                Navigator.push(
                   context, 
                   MaterialPageRoute(builder: (_) => const CitasScreen()),
                   );
@@ -28,16 +28,16 @@ class AppDrawner extends StatelessWidget{
             ListTile(
               title: const Text("Servicios"),
               onTap: (){
-                Navigator.pushReplacement(
+                Navigator.push(
                   context, 
                   MaterialPageRoute(builder: (_) => const Serviciosscreen()),
                   );
               },
             ),
             ListTile(
-            title: const Text('Cerrar Sesión'),
+            title: const Text("Cerrar Sesión"),
             onTap: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                 context,
                 MaterialPageRoute(builder: (_) => const LoginScreen()),
               );
