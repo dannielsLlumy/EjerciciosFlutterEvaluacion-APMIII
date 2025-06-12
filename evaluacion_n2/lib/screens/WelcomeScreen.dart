@@ -42,7 +42,7 @@ class Welcomescreen extends StatelessWidget {
               ),
               const SizedBox(height: 40),
               const Text(
-                "Desarrollado por: Danniel Llumy (@dannielsLlumy)",
+                "Desarrollado por: Daniel Llumiquinga (@dannielsLlumy)",
                 textAlign: TextAlign.center,
               ),
             ],
